@@ -43,13 +43,12 @@ public class WordLadder {
 	 */
 	public static int ladderLength(String beginWord, String endWord, List<String> wordList) {
 		HashSet<String> set = new HashSet<String>(wordList);
-		if(set.contains(beginWord)){
-			set.remove(beginWord);
-		}
-		Queue<String> queue = new LinkedList<String>();
+		if(set.contains(beginWord)) set.remove(beginWord);
+		if(!set.contains(endWord)) set.remove(endWord);
 		int level = 1;
 		int curNum = 1;
 		int nextNum = 0;
+		Queue<String> queue = new LinkedList<String>();
 		queue.offer(beginWord);
 		while(!queue.isEmpty()){
 			String word = queue.poll();
@@ -79,7 +78,6 @@ public class WordLadder {
 		}
 		return 0;
     }
-	
 	public static void main(String[] args) {
 		String beginWord = "hit";
 		String endWord = "cog";

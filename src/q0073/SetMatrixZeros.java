@@ -80,7 +80,6 @@ public class SetMatrixZeros {
 			}
 		}
 	}
-	
 	public static void main(String[] args) {
 		int[][] matrix = {{0,1,2,0},
 						  {3,4,5,2},

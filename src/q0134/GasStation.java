@@ -47,7 +47,6 @@ public class GasStation {
 	 */
 	public static int canCompleteCircuit(int[] gas, int[] cost) {
 		int n = gas.length;
-		
 		int total = 0;
 		int curr = 0;
 		int start = 0;
@@ -65,7 +64,6 @@ public class GasStation {
 			return -1;
 		}
     }
-	
 	public static void main(String[] args) {
 		int[] gas  = {1,2,3,4,5};
 		int[] cost = {3,4,5,1,2};

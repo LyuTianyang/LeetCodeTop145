@@ -38,7 +38,7 @@ public class WordBreak {
 		//init
 		dp[0] = true;
 		//function s = s'(0,j)+s'(j+1,i) s=s.substring(0,j)+s.substring(j+1,i)
-		for(int i=1; i<= n; i++){
+		for(int i=1; i<=n; i++){
 			for(int j=0; j<i; j++){
 				if(dp[j]==true && wordDict.contains(s.substring(j, i))){
 					dp[i] = true;
@@ -49,7 +49,6 @@ public class WordBreak {
 		//result
 		return dp[n];
     }
-	
 	public static void main(String[] args) {
 		List<String> wordDict = new ArrayList<String>();
 		wordDict.add("apple");

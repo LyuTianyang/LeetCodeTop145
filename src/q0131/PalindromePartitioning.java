@@ -27,7 +27,6 @@ public class PalindromePartitioning {
 		helper(s, start, len, list, res);
 		return res;
     }
-	
 	public static void helper(String s, int start, int len, List<String> list, List<List<String>> res){
 		if(start == len){
 			res.add(new ArrayList<String>(list));
@@ -35,15 +34,11 @@ public class PalindromePartitioning {
 		}
 		for(int i=start; i<len; i++){
 			if(!isPalindrome(s, start, i)) continue;
-			
 			list.add(s.substring(start, i+1));
 			helper(s, i+1, len, list, res);
 			list.remove(list.size()-1);
 		}
-		
-		
 	}
-	
 	public static boolean isPalindrome(String s, int left, int right){
 		while(left<right){
 			if(s.charAt(left) != s.charAt(right)){

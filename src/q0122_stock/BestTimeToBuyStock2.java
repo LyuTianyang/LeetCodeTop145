@@ -39,7 +39,6 @@ public class BestTimeToBuyStock2 {
 		}
 		return maxProfit;
     }
-	
 	public static void main(String[] args) {
 		int[] prices = new int[]{7,1,5,3,6,4};
 		int profit = maxProfit(prices);

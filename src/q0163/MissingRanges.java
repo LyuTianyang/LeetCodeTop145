@@ -12,22 +12,22 @@ public class MissingRanges {
 
 	 */
 	 public static List<String> findMissingRanges(int[] nums, int lower, int upper) {
-		 List<String> ranges = new ArrayList<String>();
+		 List<String> res = new ArrayList<String>();
 		 if(nums == null || nums.length == 0){
-			 ranges.add(range(lower, upper));
-			 return ranges;
+			 res.add(range(lower,upper));
+			 return res;
 		 }
 		 //Arrays.sort(nums);
-		 if(lower<nums[0]) ranges.add(range(lower, nums[0]-1));
-		 for(int i=0; i<nums.length-1; i++){
+		 int n = nums.length;
+		 if(lower<nums[0]) res.add(range(lower,nums[0]-1));
+		 for(int i=0; i<n-1; i++){
 			 if(nums[i]+1<nums[i+1]){
-				 ranges.add(range(nums[i]+1, nums[i+1]-1));
+				 res.add(range(nums[i]+1,nums[i+1]-1));
 			 }
 		 }
-		 if(nums[nums.length-1]<upper) ranges.add(range(nums[nums.length-1]+1, upper));
-		 return ranges;
+		 if(nums[n-1]<upper) res.add(range(nums[n-1]+1, upper));
+		 return res;
 	 }
-	 
 	 public static String range(int lower, int upper){
 		 if(lower == upper) return Integer.toString(lower);
 		 return lower+"->"+upper;

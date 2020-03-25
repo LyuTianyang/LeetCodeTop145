@@ -1,4 +1,4 @@
-package q0108;
+package q0108_binaryTree;
 
 class TreeNode {
 	int val;

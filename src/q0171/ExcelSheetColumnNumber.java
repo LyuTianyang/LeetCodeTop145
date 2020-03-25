@@ -36,9 +36,8 @@ public class ExcelSheetColumnNumber {
 		}
 		return ans;
     }
-	
 	public static void main(String[] args) {
-		int ans = titleToNumber("AB");
+		int ans = titleToNumber("ZY");
 		System.out.println(ans);
 	}
 }

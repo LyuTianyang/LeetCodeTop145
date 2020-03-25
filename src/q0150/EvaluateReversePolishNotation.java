@@ -53,9 +53,27 @@ public class EvaluateReversePolishNotation {
 		}
 		return stack.pop();
     }
-	
+	public static int evalRPN1(String[] tokens) {
+		if(tokens == null || tokens.length == 0) return 0;
+		Stack<Integer> stack = new Stack<Integer>();
+		for(String s : tokens){
+			if(s.equals("+")){
+				stack.push(stack.pop()+stack.pop());
+			}else if(s.equals("-")){
+				stack.push(-stack.pop()+stack.pop());
+			}else if(s.equals("*")){
+				stack.push(stack.pop()*stack.pop());
+			}else if(s.equals("/")){
+				int num = stack.pop();
+				stack.push(stack.pop()/num);
+			}else{
+				stack.push(Integer.parseInt(s));
+			}
+		}
+		return stack.pop();
+	}
 	public static void main(String[] args) {
-		String[] tokens ={"2", "1", "+", "3", "*"};
+		String[] tokens ={"10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"};
 		int res = evalRPN(tokens);
 		System.out.println(res);
 	}
