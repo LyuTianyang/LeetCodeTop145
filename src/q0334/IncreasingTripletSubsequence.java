@@ -34,7 +34,21 @@ public class IncreasingTripletSubsequence {
 		}
 		return false;
 	}
-	
+	public static boolean increasingTriplet1(int[] nums) {
+		if(nums == null || nums.length < 3) return false;
+		int a = Integer.MAX_VALUE;
+		int b = Integer.MAX_VALUE;
+		for(int i=0; i<nums.length; i++){
+			if(nums[i]<=a){
+				a = nums[i];
+			}else if(nums[i]<=b){
+				b = nums[i];
+			}else{
+				return true;
+			}
+		}
+		return false;
+	}
 	/*
 	3个连续递增子序列
 	有3个槽位，a,b,c
@@ -43,8 +57,8 @@ public class IncreasingTripletSubsequence {
 	 */
 	
 	public static void main(String[] args) {
-		int[] nums = new int[]{1,2,3,4,5};
-		boolean b = increasingTriplet(nums);
+		int[] nums = new int[]{3,2,1,5,7};
+		boolean b = increasingTriplet1(nums);
 		System.out.println(b);
 	}
 }

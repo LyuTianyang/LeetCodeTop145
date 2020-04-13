@@ -45,6 +45,6 @@ public class OddEvenLinkedList {
 		head.next.next.next = new ListNode(4);
 		head.next.next.next.next = new ListNode(5);
 		oddEvenList(head);
-		System.out.println(head.val);
+		System.out.println(head.val+"->"+head.next.val+"->"+head.next.next.val+"->"+head.next.next.next.val+"->"+head.next.next.next.next.val);
 	}
 }

@@ -16,7 +16,7 @@ public class kthSmallestInMatrix {
 	
 	返回 13。
 	说明:
-	你可以假设 k 的值永远是有效的, 1 ≤ k ≤ n2 
+	你可以假设 k 的值永远是有效的, 1 ≤ k ≤ n 
 	 */
 	public static int kthSmallest(int[][] matrix, int k) {
 		if(matrix == null || matrix.length==0 || matrix[0].length == 0) return 0;
@@ -26,8 +26,8 @@ public class kthSmallestInMatrix {
 		while(left<right){
 			int mid = left+(right-left)/2;
 			int count = 0;
-			int j = matrix[0].length-1;
-			for(int i=0; i<matrix.length; i++){
+			int j = n-1;
+			for(int i=0; i<n; i++){
 				while(j>=0 && matrix[i][j]>mid){
 					j--;
 				}

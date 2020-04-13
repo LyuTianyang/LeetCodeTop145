@@ -24,7 +24,7 @@ public class FizzBuzz {
 	public static List<String> fizzBuzz1(int n) {
 		List<String> ans = new ArrayList<String>();
 		if (n < 1) return ans;
-		for (int i = 0; i <= n; i++) {
+		for (int i = 1; i <= n; i++) {
 			boolean divs3 = (i % 3 == 0);
 			boolean divs5 = (i % 5 == 0);
 			if (divs3 && divs5) {
@@ -39,7 +39,6 @@ public class FizzBuzz {
 		}
 		return ans;
 	}
-
 	public static List<String> fizzBuzz2(int n) {
 		List<String> ans = new ArrayList<String>();
 		if (n < 1) return ans;

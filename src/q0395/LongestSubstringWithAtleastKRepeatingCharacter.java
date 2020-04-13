@@ -27,33 +27,33 @@ public class LongestSubstringWithAtleastKRepeatingCharacter {
 		if(s == null || s.length() == 0 || k > s.length()) return 0;
 		int len = s.length();
 		if(k<2) return len;
-		return count(s.toCharArray(), k, 0, len-1);
+		return count(s, k, 0, len-1);
     }
-
-	public static int count(char[] chars, int k, int left, int right) {
+	public static int count(String s, int k, int left, int right){
 		if(right-left+1<k) return 0;
 		int[] times = new int[26];
 		for(int i=left; i<=right; i++){
-			times[chars[i]-'a']++;
+			times[s.charAt(i)-'a']++;
 		}
-		while(right-left+1 >= k && times[chars[left]-'a']<k){
+		if(right-left+1>=k && times[s.charAt(left)-'a']<k){
 			left++;
 		}
-		while(right-left+1 >= k && times[chars[right]-'a']<k){
+		if(right-left+1>=k && times[s.charAt(right)-'a']<k){
 			right--;
 		}
 		if(right-left+1<k) return 0;
 		for(int i=left; i<=right; i++){
-			if(times[chars[i]-'a']<k){
-				return Math.max(count(chars,k,left,i-1), count(chars,k,i+1,right));
+			if(times[s.charAt(i)-'a']<k){
+				return Math.max(count(s, k, left, i-1), count(s, k, i+1, right));
 			}
 		}
 		return right-left+1;
 	}
 	
+	
 	public static void main(String[] args) {
 		String s = "aaabb";
-		int res = longestSubstring(s,2);
+		int res = longestSubstring(s,3);
 		System.out.println(res);
 	}
 }

@@ -46,13 +46,13 @@ public class GameOfLife {
 				if(count<2){
                     arrs[i][j]=0;
                 }else if(count>3){
-                    //如果活细胞周围八个位置有两个或三个活细胞，则该位置活细胞仍然存活；
                     //如果活细胞周围八个位置有超过三个活细胞，则该位置活细胞死亡；
                     arrs[i][j]=0;
                 }else if(count==3&&arrs[i][j]==0){
                     //如果死细胞周围正好有三个活细胞，则该位置死细胞复活；
                     arrs[i][j]=1;
                 }else{
+                	//如果活细胞周围八个位置有两个或三个活细胞，则该位置活细胞仍然存活；
                     arrs[i][j]=board[i][j];
                 }
 			}
@@ -64,13 +64,13 @@ public class GameOfLife {
 		}
     }
 	
-	public static int findLiveCellCount(int i, int j, int majRow, int majColumn, int[][] board){//统计细胞四周活细胞数量
+	public static int findLiveCellCount(int i, int j, int row, int col, int[][] board){//统计细胞四周活细胞数量
         int count=0;//记录传入位置周边状体为1的数量
-        if(j>=0&&i>=0&&majRow>i&&majColumn>j){
+        if(j>=0 && i>=0 && i<row && j<col){
             //(j-1)
             if(j-1>=0){
                 //(j-1,i+1)
-                if(i<majRow-1){
+                if(i<row-1){
                     if (board[i+1][j-1]==1){
                         count++;
                     }
@@ -90,7 +90,7 @@ public class GameOfLife {
 
             //j
             //(j,i+1)
-            if(i<majRow-1){
+            if(i<row-1){
                 if(board[i+1][j]==1){
                     count++;
                 }
@@ -103,9 +103,9 @@ public class GameOfLife {
             }
 
             //j+1
-            if(j<majColumn-1){
+            if(j<col-1){
                 //(j+1,i+1)
-                if(i<majRow-1){
+                if(i<row-1){
                     if(board[i+1][j+1]==1){
                         count++;
                     }

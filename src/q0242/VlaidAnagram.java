@@ -41,7 +41,6 @@ public class VlaidAnagram {
 		}
 		return true;
 	}
-	
 	public static void main(String[] args) {
 		String s = "anagram";
 		String t = "nagaram";

@@ -14,21 +14,23 @@ public class FirstUniqueChar {
 	s = "loveleetcode",
 	返回 2.
 	 */
-	public int firstUniqChar(String s) {
+	public static int firstUniqChar(String s) {
 		if(s == null || s.length() == 0) return -1;
 		HashMap<Character, Integer> map = new HashMap<Character, Integer>();
 		int n = s.length();
-		// build hash map : character and how often it appears
 		for(int i=0; i<n; i++){
-			char c = s.charAt(i);
-			map.put(c, map.getOrDefault(c, 0)+1);
+			map.put(s.charAt(i), map.getOrDefault(s.charAt(i),0)+1);
 		}
-		// find the index
 		for(int i=0; i<n; i++){
-			if(map.get(s.charAt(i))==1){
+			if(map.get(s.charAt(i)) == 1){
 				return i;
 			}
 		}
 		return -1;
-    }
+	}
+	
+	public static void main(String[] args) {
+		int res = firstUniqChar("loveleetcode");
+		System.out.println(res);
+	}
 }

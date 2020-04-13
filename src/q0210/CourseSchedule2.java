@@ -38,9 +38,12 @@ public class CourseSchedule2 {
 	这个问题相当于查找一个循环是否存在于有向图中。如果存在循环，则不存在拓扑排序，因此不可能选取所有课程进行学习。
 	通过 DFS 进行拓扑排序 - 一个关于Coursera的精彩视频教程（21分钟），介绍拓扑排序的基本概念。
 	拓扑排序也可以通过 BFS 完成。
+	
+	  ->1->
+	 0	   3
+	  ->2->
 	 */
 	public static int[] findOrder(int numCourses, int[][] prerequisites) {
-		boolean isPossible = true;
 		Map<Integer, List<Integer>> map = new HashMap<Integer, List<Integer>>();
 		int[] indegree = new int[numCourses];
 		int[] res = new int[numCourses];

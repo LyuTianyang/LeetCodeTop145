@@ -42,7 +42,6 @@ public class LargestNumber {
 		}
 		return largestNumber;
     }
-	
 	public static void main(String[] args) {
 		int[] nums = new int[]{3,30,34,5,9};
 		String largestNumber = largestNumber(nums);

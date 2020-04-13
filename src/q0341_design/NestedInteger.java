@@ -1,4 +1,4 @@
-package q0341;
+package q0341_design;
 
 import java.util.List;
 

@@ -61,7 +61,6 @@ public class FindTheCelebrity extends Relation{
 		}
 		return res;
 	}
-	
 	public int findCelebrity2(int n) {
         Map<Integer, Integer> map = new HashMap<>();
         List<Integer> res = new ArrayList<>();

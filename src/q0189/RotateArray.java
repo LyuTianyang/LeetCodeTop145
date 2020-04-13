@@ -23,16 +23,19 @@ public class RotateArray {
 	向右旋转 2 步: [3,99,-1,-100]
 	 */
 	public static void rotate1(int[] nums, int k) {
-		int[] temp = new int[nums.length];
-		for(int i=0; i<nums.length; i++){
-			temp[(i+k)%nums.length] = nums[i];
+		if(nums == null || nums.length == 0) return;
+		int n = nums.length;
+		int[] temp = new int[n];
+		for(int i=0; i<n; i++){
+			temp[(i+k)%n] = nums[i];
 		}
-		for(int i=0; i<nums.length; i++){
+		for(int i=0; i<n; i++){
 			nums[i] = temp[i];
 		}
     }
 	
 	public void rotate(int[] nums, int k) {
+		if(nums == null || nums.length == 0) return;
         k %= nums.length;
         reverse(nums, 0, nums.length - 1);
         reverse(nums, 0, k - 1);
@@ -47,7 +50,6 @@ public class RotateArray {
             end--;
         }
     }
-	
 	public static void main(String[] args) {
 		int[] nums = new int[]{1,2,3,4,5,6,7};
 		rotate1(nums, 3);

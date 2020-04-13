@@ -49,7 +49,6 @@ public class BasicCalculator2 {
 		}
 		return res;
     }
-	
 	public static void main(String[] args) {
 		String s = " 3+5 / 2";
 		int res = calculate(s);

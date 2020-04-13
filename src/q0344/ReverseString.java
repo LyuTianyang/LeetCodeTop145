@@ -31,7 +31,16 @@ public class ReverseString {
 			right--;
 		}
 	}
-
+	public static void reverseString(char[] s) {
+		if(s == null || s.length < 2) return;
+		int left = 0;
+		int right = s.length-1;
+		while(left<right){
+			swap(s, left, right);
+			left++;
+			right--;
+		}
+	}
 	public static void swap(char[] s, int left, int right) {
 		char tmp = s[left];
 		s[left] = s[right];
@@ -43,6 +52,10 @@ public class ReverseString {
 		reverseString1(s);
 		System.out.println(Arrays.toString(s));
 	}
+	
+	public static void reverseString2(char[] s) {
+		helper(s, 0, s.length - 1);
+	}
 
 	public static void helper(char[] s, int left, int right) {
 		if (left >= right) return;
@@ -51,9 +64,4 @@ public class ReverseString {
 		s[right--] = tmp;
 		helper(s, left, right);
 	}
-
-	public static void reverseString2(char[] s) {
-		helper(s, 0, s.length - 1);
-	}
-
 }

@@ -48,7 +48,6 @@ public class FourSum2 {
 		}
 		return res;
     }
-	
 	public static void main(String[] args) {
 		int[] A = new int[]{1,2};
 		int[] B = new int[]{-2,-1};

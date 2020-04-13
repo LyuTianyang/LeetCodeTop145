@@ -81,9 +81,9 @@ public class SetMatrixZeros {
 		}
 	}
 	public static void main(String[] args) {
-		int[][] matrix = {{0,1,2,0},
-						  {3,4,5,2},
-						  {1,3,1,5}};
+		int[][] matrix = {{1,1,1},
+						  {1,0,1},
+						  {1,1,1}};
 		setZeroes(matrix);
 		for(int i=0; i<matrix.length;i++){
 			System.out.println(Arrays.toString(matrix[i]));

@@ -34,7 +34,6 @@ public class FactorialTrailingZeroes {
 		}
 		return count;
 	}
-	
 	public static int trailingZeroes2(int n) {
 		int count = 0;
 		while(n > 0){
@@ -43,9 +42,8 @@ public class FactorialTrailingZeroes {
 		}
 		return count;
 	}
-	
 	public static void main(String[] args) {
-		int res = trailingZeroes2(6);
+		int res = trailingZeroes1(11);
 		System.out.println(res);
 	}
 }
