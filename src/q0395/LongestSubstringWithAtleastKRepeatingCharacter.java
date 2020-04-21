@@ -26,7 +26,7 @@ public class LongestSubstringWithAtleastKRepeatingCharacter {
 	public static int longestSubstring(String s, int k) {
 		if(s == null || s.length() == 0 || k > s.length()) return 0;
 		int len = s.length();
-		if(k<2) return len;
+		if(k<=1) return len;
 		return count(s, k, 0, len-1);
     }
 	public static int count(String s, int k, int left, int right){
@@ -52,7 +52,7 @@ public class LongestSubstringWithAtleastKRepeatingCharacter {
 	
 	
 	public static void main(String[] args) {
-		String s = "aaabb";
+		String s = "aaabbc";
 		int res = longestSubstring(s,3);
 		System.out.println(res);
 	}

@@ -57,7 +57,6 @@ public class DecodeWays {
 		}
 		return c1;
     }
-	
 	public static void main(String[] args) {
 		int res = numDecodings1("226");
 		System.out.println(res);

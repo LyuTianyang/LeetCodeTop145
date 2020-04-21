@@ -31,11 +31,12 @@ public class FourSum2 {
 		for(int i=0; i<A.length; i++){
 			for(int j=0; j<B.length; j++){
 				int sumAB = A[i] + B[j];
-				if(map.containsKey(sumAB)){
+				map.put(sumAB, map.getOrDefault(sumAB,0)+1);
+				/*if(map.containsKey(sumAB)){
 					map.put(sumAB, map.get(sumAB)+1);
 				}else{
 					map.put(sumAB, 1);
-				}
+				}*/
 			}
 		}
 		for(int i=0; i<C.length;i++){

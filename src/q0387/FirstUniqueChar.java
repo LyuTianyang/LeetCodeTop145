@@ -28,7 +28,6 @@ public class FirstUniqueChar {
 		}
 		return -1;
 	}
-	
 	public static void main(String[] args) {
 		int res = firstUniqChar("loveleetcode");
 		System.out.println(res);
