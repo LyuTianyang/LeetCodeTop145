@@ -1,4 +1,4 @@
-package q0251;
+package q0251_design;
 
 import java.util.Iterator;
 import java.util.List;

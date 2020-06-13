@@ -29,7 +29,7 @@ public class MissingRanges {
 		 return res;
 	 }
 	 public static String range(int lower, int upper){
-		 if(lower == upper) return Integer.toString(lower);
+		 if(lower == upper) return String.valueOf(lower);
 		 return lower+"->"+upper;
 	 }
 	 

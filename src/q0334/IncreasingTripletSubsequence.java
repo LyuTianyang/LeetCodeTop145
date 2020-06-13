@@ -20,22 +20,7 @@ public class IncreasingTripletSubsequence {
 	输出: false
 	 */
 	public static boolean increasingTriplet(int[] nums) {
-		if(nums == null || nums.length == 0) return false;
-		int a = Integer.MAX_VALUE;
-		int b = Integer.MAX_VALUE;
-		for(int i=0; i<nums.length; i++){
-			if(nums[i]<=a){
-				a = nums[i];
-			}else if(nums[i]<=b){
-				b = nums[i];
-			}else{
-				return true;
-			}
-		}
-		return false;
-	}
-	public static boolean increasingTriplet1(int[] nums) {
-		if(nums == null || nums.length < 3) return false;
+		if(nums == null || nums.length <= 2) return false;
 		int a = Integer.MAX_VALUE;
 		int b = Integer.MAX_VALUE;
 		for(int i=0; i<nums.length; i++){
@@ -58,7 +43,7 @@ public class IncreasingTripletSubsequence {
 	
 	public static void main(String[] args) {
 		int[] nums = new int[]{3,2,1,5,7};
-		boolean b = increasingTriplet1(nums);
+		boolean b = increasingTriplet(nums);
 		System.out.println(b);
 	}
 }

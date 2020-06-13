@@ -43,8 +43,8 @@ public class WordLadder {
 	 */
 	public static int ladderLength(String beginWord, String endWord, List<String> wordList) {
 		HashSet<String> set = new HashSet<String>(wordList);
+		if(!set.contains(endWord)) return 0;
 		if(set.contains(beginWord)) set.remove(beginWord);
-		if(!set.contains(endWord)) set.remove(endWord);
 		int level = 1;
 		int curNum = 1;
 		int nextNum = 0;

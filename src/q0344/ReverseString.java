@@ -19,23 +19,10 @@ public class ReverseString {
 	 * 输入：['H','a','n','n','a','h'] 输出：['h','a','n','n','a','H']
 	 */
 	public static void reverseString1(char[] s) {
-		if (s == null || s.length == 0) return;
+		if (s == null || s.length <= 1) return;
 		int left = 0;
 		int right = s.length - 1;
 		while (left < right) {
-			/*char tmp = s[left];
-			s[left++] = s[right];
-			s[right--] = tmp;*/
-			swap(s, left, right);
-			left++;
-			right--;
-		}
-	}
-	public static void reverseString(char[] s) {
-		if(s == null || s.length < 2) return;
-		int left = 0;
-		int right = s.length-1;
-		while(left<right){
 			swap(s, left, right);
 			left++;
 			right--;

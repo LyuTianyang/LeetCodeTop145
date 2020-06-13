@@ -22,20 +22,21 @@ public class WiggleSort {
 	 */
 	public static void wiggleSort1(int[] nums) {
 		if(nums == null || nums.length == 0) return;
-		int[] tmp = Arrays.copyOf(nums, nums.length);
+		int n = nums.length;
+		int[] tmp = Arrays.copyOf(nums, n);
 		Arrays.sort(tmp);
-		int index = (nums.length+1)/2;
-		for(int i=0, j=nums.length; i<nums.length-1; i=i+2){
-			nums[i] = tmp[--index];
+		int mid = (n+1)/2;
+		int j = n;
+		for(int i=0; i<n-1; i+=2){
+			nums[i] = tmp[--mid];
 			nums[i+1] = tmp[--j];
 		}
-		if(nums.length % 2 == 0){
-			nums[nums.length-1] = nums[nums.length-1];
+		if(n%2 == 0){
+			nums[n-1] = nums[n-1];
 		}else{
-			nums[nums.length-1] = tmp[0];
+			nums[n-1] = tmp[0];
 		}
-    }
-	
+	}
 	public static int n;
 	    
     public static void swap(int[] nums, int i, int j) {

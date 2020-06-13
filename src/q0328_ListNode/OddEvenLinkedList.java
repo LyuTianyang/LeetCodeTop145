@@ -24,7 +24,7 @@ public class OddEvenLinkedList {
 	链表的第一个节点视为奇数节点，第二个节点视为偶数节点，以此类推。
 	 */
 	public static ListNode oddEvenList(ListNode head) {
-		if(head == null) return null;
+		if(head == null || head.next == null) return head;
 		ListNode odd = head;
 		ListNode even = head.next;
 		ListNode evenHead = even;
@@ -37,7 +37,6 @@ public class OddEvenLinkedList {
 		odd.next = evenHead;
 		return head;
     }
-	
 	public static void main(String[] args) {
 		ListNode head = new ListNode(1);
 		head.next = new ListNode(2);

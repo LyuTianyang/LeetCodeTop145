@@ -1,4 +1,4 @@
-package q0191;
+package q0191_bits;
 
 public class NumberOf1Bits {
 	/**

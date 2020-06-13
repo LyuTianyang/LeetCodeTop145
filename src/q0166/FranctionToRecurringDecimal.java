@@ -55,32 +55,8 @@ public class FranctionToRecurringDecimal {
 		}
 		return res.toString();
     }
-	public static String fractionToDecimal1(int numerator, int denominator) {
-		if(numerator==0 || denominator==0) return "0";
-		StringBuilder res = new StringBuilder();
-		if(numerator<0 ^ denominator<0) res.append("-");
-		long num = (long)Math.abs(numerator);
-		long den = (long)Math.abs(denominator);
-		res.append(num/den);
-		long remain = num%den;
-		if(remain == 0) return res.toString();
-		res.append(".");
-		Map<Long, Integer> map = new HashMap<Long, Integer>();
-		while(remain>0){
-			if(map.containsKey(remain)){
-				res.insert(map.get(remain),"(");
-				res.append(")");
-				return res.toString();
-			}
-			map.put(remain, res.length());
-			remain = remain*10;
-			res.append(remain/den);
-			remain = remain%den;
-		}
-		return res.toString();
-	}
 	public static void main(String[] args) {
-		String res = fractionToDecimal1(5,3);
+		String res = fractionToDecimal(5,3);
 		System.out.println(res);
 	}
 }

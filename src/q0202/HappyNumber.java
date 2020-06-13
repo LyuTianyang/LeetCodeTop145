@@ -19,6 +19,7 @@ public class HappyNumber {
 	1^2 + 0^2 + 0^2 = 1
 	 */
 	public static boolean isHappy(int n) {
+		if(n == 0) return true;
 		HashSet<Integer> set = new HashSet<Integer>();
 		int tmp = 0;
 		while(true){

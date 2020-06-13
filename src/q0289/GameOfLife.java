@@ -36,33 +36,30 @@ public class GameOfLife {
 	本题中，我们使用二维数组来表示面板。原则上，面板是无限的，但当活细胞侵占了面板边界时会造成问题。你将如何解决这些问题？
 	 */
 	public static void gameOfLife(int[][] board) {
-		if(board == null || board.length == 0) return;
-		int m = board.length;
-		int n = board[0].length;
-		int[][] arrs = new int[m][n];
-		for(int i=0; i<m; i++){
-			for(int j=0;j<n; j++){
-				int count = findLiveCellCount(i,j,m,n,board);
+		if(board == null || board.length == 0 || board[0].length == 0) return;
+		int row = board.length;
+		int col = board[0].length;
+		int[][] arr = new int[row][col];
+		for(int i=0; i<row; i++){
+			for(int j=0; j<col; j++){
+				int count = findLiveCellCount(i,j,row,col,board);
 				if(count<2){
-                    arrs[i][j]=0;
-                }else if(count>3){
-                    //如果活细胞周围八个位置有超过三个活细胞，则该位置活细胞死亡；
-                    arrs[i][j]=0;
-                }else if(count==3&&arrs[i][j]==0){
-                    //如果死细胞周围正好有三个活细胞，则该位置死细胞复活；
-                    arrs[i][j]=1;
-                }else{
-                	//如果活细胞周围八个位置有两个或三个活细胞，则该位置活细胞仍然存活；
-                    arrs[i][j]=board[i][j];
-                }
+					arr[i][j] = 0;
+				}else if(count>3){
+					arr[i][j] = 0;
+				}else if(count==3 && board[i][j] == 0){
+					arr[i][j] = 1;
+				}else{
+					arr[i][j] = board[i][j];
+				}
 			}
 		}
-		for(int i=0; i<m; i++){
-			for(int j=0; j<n; j++){
-				board[i][j] = arrs[i][j];
+		for(int i=0; i<row; i++){
+			for(int j=0; j<col; j++){
+				board[i][j] = arr[i][j];
 			}
 		}
-    }
+	}
 	
 	public static int findLiveCellCount(int i, int j, int row, int col, int[][] board){//统计细胞四周活细胞数量
         int count=0;//记录传入位置周边状体为1的数量

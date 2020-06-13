@@ -53,28 +53,28 @@ public class EvaluateReversePolishNotation {
 		}
 		return stack.pop();
     }
+	public static void main(String[] args) {
+		String[] tokens ={"10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"};
+		int res = evalRPN1(tokens);
+		System.out.println(res);
+	}
 	public static int evalRPN1(String[] tokens) {
 		if(tokens == null || tokens.length == 0) return 0;
 		Stack<Integer> stack = new Stack<Integer>();
-		for(String s : tokens){
-			if(s.equals("+")){
+		for(int i=0; i<tokens.length; i++){
+			if(tokens[i].equals("+")){
 				stack.push(stack.pop()+stack.pop());
-			}else if(s.equals("-")){
+			}else if(tokens[i].equals("-")){
 				stack.push(-stack.pop()+stack.pop());
-			}else if(s.equals("*")){
+			}else if(tokens[i].equals("*")){
 				stack.push(stack.pop()*stack.pop());
-			}else if(s.equals("/")){
+			}else if(tokens[i].equals("/")){
 				int num = stack.pop();
-				stack.push(stack.pop()/num);
+				if(num != 0) stack.push(stack.pop()/num);
 			}else{
-				stack.push(Integer.parseInt(s));
+				stack.push(Integer.valueOf(tokens[i]));
 			}
 		}
 		return stack.pop();
-	}
-	public static void main(String[] args) {
-		String[] tokens ={"10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"};
-		int res = evalRPN(tokens);
-		System.out.println(res);
 	}
 }

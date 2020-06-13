@@ -1,4 +1,4 @@
-package q0190;
+package q0190_bits;
 
 public class ReverseBits {
 	/**
@@ -30,7 +30,6 @@ public class ReverseBits {
         }
         return res;
     }
-	
 	public static void main(String[] args) {
 		int res = reverseBits(43261596);
 		System.out.println(res);
