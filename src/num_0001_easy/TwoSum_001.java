@@ -35,9 +35,9 @@ public class TwoSum_001 {
 		int[] nums = new int[]{1,3,5,6,8};
 		int target = 8;
 		int[] result = twoSum1(nums, target);
-		for(int i: result){
-			System.out.println(i);
-		}
+		
+		System.out.println(Arrays.toString(result));
+		
 		
 		
 	}
